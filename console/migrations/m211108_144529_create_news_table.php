@@ -29,7 +29,7 @@ class m211108_144529_create_news_table extends Migration
 
             'image' => $this->string(),
 
-            'org_created_at' => $this->dateTime(),
+            'org_created_at' => $this->string(),
             'created_at' => $this->dateTime(),
 
             'status' => $this->tinyInteger()->defaultValue(1)->notNull(),

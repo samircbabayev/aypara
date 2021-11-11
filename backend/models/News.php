@@ -42,6 +42,7 @@ class News extends \yii\db\ActiveRecord
             [['org_id', 'text', 'resource_link'], 'string'],
             [['org_created_at', 'created_at'], 'safe'],
             [['org_category_name', 'title', 'resource_name', 'image'], 'string', 'max' => 255],
+            [['org_id'], 'unique'],
         ];
     }
 
