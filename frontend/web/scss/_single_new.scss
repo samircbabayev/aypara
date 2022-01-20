@@ -1,0 +1,27 @@
+.single__new-inner{
+  margin: 60px 0;
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 1024px) {
+    display: block;
+  }
+  .single__new-text{
+    width: 60%;
+    h1{
+      font-size: 3rem;
+    }
+    p{
+      font-size: 1.8rem;
+      color: rgb(19, 19, 19);
+    }
+    @media (max-width: 1024px) {
+      margin: 0 auto;
+    }
+  }
+  .single__new-img{
+    width: 35%;
+    @media (max-width: 1024px) {
+      margin: 0 auto;
+    }
+  }
+}

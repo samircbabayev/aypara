@@ -1,0 +1,74 @@
+// @font-face {
+// 	font-family: GoshaFont;
+// 	src: url(fonts/GoshaSans-Bold.otf);
+// 	src: url(fonts/GoshaSans-Regular.otf);
+// }
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+
+$font2: "Montserrat", sans-serif;
+$font1: "Source Serif Pro", serif;
+
+$color_black: #1f1f1f;
+$color_white: #f7f7f5;
+// $font_xs: 1.5rem;
+$font_sm: 1.8rem;
+$font_md: 2.4rem;
+// $font_lg: 3rem;
+// $font_xl: 3.5rem;
+// $font_2xl: 5rem;
+// $font_3xl: 7rem;
+$font_4xl: 9.6rem;
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	overflow-x: hidden !important;
+	font-family: $font1;
+	font-weight: 400;
+	font-size: $font_md;
+	background-color: $color_white;
+	color: #0d0d0d;
+}
+
+ul,
+li {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+}
+img {
+	width: 100%;
+	height: auto;
+}
+
+$mb_sm: "max-width: 425px";
+$mb_md: "max-width: 769px";
+$mb_lg: "max-width: 1024px";
+$mb_xl: "max-width: 1440px";
+$mb_2xl: "max-width: 1715px";
+
+.container {
+	margin: 0 auto;
+	padding: 0 30px;
+	@media ($mb_2xl) {
+		padding: 0 30px;
+	}
+	@media ($mb_xl) {
+		padding: 0 30px;
+	}
+	@media ($mb_lg) {
+		padding: 0 30px;
+	}
+	@media ($mb_md) {
+		padding: 0 30px;
+	}
+	@media ($mb_sm) {
+		padding: 0 15px;
+	}
+}

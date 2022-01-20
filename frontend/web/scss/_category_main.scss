@@ -1,0 +1,26 @@
+.category__main-inner {
+	margin-top: 60px;
+	h1 {
+		text-align: center;
+		position: relative;
+	}
+	.news {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		@media (max-width: 1024px) {
+			display: block;
+		}
+		.news__single {
+			max-width: 19%;
+			margin-bottom: 25px;
+			.title {
+				color: #000000;
+			}
+			p {
+				font-size: 1.6rem;
+				color: rgb(190, 190, 190);
+			}
+		}
+	}
+}

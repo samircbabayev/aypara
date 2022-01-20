@@ -1,0 +1,29 @@
+.last_news_carousel {
+	margin-top: 30px;
+	// @media(max-width:768px){
+	// 	margin-top: 74px;
+	// }
+	.item {
+		.title {
+			font-weight: 600;
+			font-size: 2.4rem;
+			line-height: 3rem;
+			cursor: pointer;
+		}
+		border-right: 1px solid #1f1f1f;
+		padding-right: 20%;
+		max-width: 290px;
+		color: $color_black;
+		&::last-child {
+			border: none;
+		}
+	}
+}
+.last__news-link {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	a {
+		text-decoration: underline;
+	}
+}

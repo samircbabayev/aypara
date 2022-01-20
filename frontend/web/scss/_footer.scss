@@ -1,0 +1,92 @@
+.footer {
+	.footer__word-banner {
+		margin-top: 20px;
+		padding: 20px 0;
+		border-top: 2px solid $color_black;
+		border-bottom: 2px solid $color_black;
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		.sacroll_text {
+			width: 100%;
+			display: flex;
+			div {
+				color: $color_black;
+				font-size: 4em;
+				white-space: nowrap;
+				font-family: $font2;
+				font-weight: 900;
+				text-transform: uppercase;
+				animation: text_animate 35s linear infinite;
+				&:nth-child(2) {
+					animation: text_animate2 35s linear infinite;
+				}
+			}
+
+			@keyframes text_animate {
+				0% {
+					transform: translateX(10%);
+				}
+				100% {
+					transform: translateX(-100%);
+				}
+			}
+
+			@keyframes text_animate2 {
+				0% {
+					transform: translateX(0%);
+				}
+				100% {
+					transform: translateX(-90%);
+				}
+			}
+		}
+	}
+	.footer__info {
+		margin-top: 20px;
+		margin-bottom: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-direction: column;
+		.logo {
+			img {
+				max-width: 170px;
+			}
+		}
+		.info {
+			font-size: 1.8rem;
+			text-align: center;
+			a {
+				color: #fe5303;
+			}
+		}
+	}
+
+	#myBtn {
+		display: none;
+		position: fixed;
+		bottom: 50px;
+		right: 15px;
+		z-index: 9999;
+		border: none;
+		outline: none;
+		background-color: #fe5303;
+		color: white;
+		cursor: pointer;
+		padding: 5px 10px;
+		border-radius: 3px;
+		font-size: $font_sm;
+		transition: all 0.3s;
+		@media ($mb_lg) {
+			font-size: $font_sm;
+			padding: 10px 15px;
+			bottom: 20px;
+			right: 30px;
+		}
+	}
+	#myBtn:hover {
+		background-color: #f0f0f0;
+		color: $color_black;
+	}
+}

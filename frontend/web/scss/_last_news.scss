@@ -1,0 +1,24 @@
+.last__news {
+	.last__news-inner {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		.item {
+			max-width: 290px;
+			border-right: 1px solid #1f1f1f;
+			padding-right: 30px;
+			@media(max-width:1024px){
+				max-width: 100%;
+				padding-right: 0;
+			}
+			.title{
+				color: #1f1f1f;
+			}
+			p {
+				font-size: 1.8rem;
+				line-height: 2.3rem;
+				color: #a49f9f;
+			}
+		}
+	}
+}
