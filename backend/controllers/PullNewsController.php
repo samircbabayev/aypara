@@ -86,6 +86,8 @@ class PullNewsController extends Controller
       $date_year = $news_html->find('.date-year', 0)->innertext;
       $when_time = $news_html->find('.when-time', 0)->innertext;
 
+      $watch_count = $news_html->find('.stats-i-container.stats_views .stats-i', 0)->innertext;
+
       $whole_time = $date_day . " " . $date_month . " " . $date_year . " " . $when_time;
 
       $model = new News();
@@ -98,6 +100,7 @@ class PullNewsController extends Controller
       $model->resource_link = $resource_link;
       $model->image = $image;
       $model->org_created_at = $whole_time;
+      $model->org_watch_count = $watch_count;
       $model->save();
     }
   }

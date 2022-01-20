@@ -11,9 +11,16 @@
 			cursor: pointer;
 		}
 		border-right: 1px solid #1f1f1f;
-		padding-right: 20%;
-		max-width: 290px;
+		max-width: 310px;
 		color: $color_black;
+		position: relative;
+		min-height: 341px;
+		padding: 0 10px;
+		img {
+			width: 88%;
+			position: absolute;
+			bottom: 0;
+		}
 		&::last-child {
 			border: none;
 		}

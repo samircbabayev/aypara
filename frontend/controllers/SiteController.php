@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use backend\models\News;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -75,7 +76,17 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $last_news = News::find()->limit(5)->all();
+
+        $most_watched_news = News::find()->where(['>', 'org_watch_count', 1000])->limit(30)->all();
+
+        $middle_watched_news = News::find()->where(['>', 'org_watch_count', 400])->andWhere(['<', 'org_watch_count', 1000])->limit(30)->all();
+
+        return $this->render('index', [
+            'last_news' => $last_news,
+            'most_watched_news' => $most_watched_news,
+            'middle_watched_news' => $middle_watched_news,
+        ]);
     }
 
     /**

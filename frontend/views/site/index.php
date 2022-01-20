@@ -1,53 +1,81 @@
 <?php
-
-/* @var $this yii\web\View */
-
-$this->title = 'My Yii Application';
+$this->title = 'Əsas';
 ?>
-<div class="site-index">
 
-    <div class="jumbotron text-center bg-transparent">
-        <h1 class="display-4">Congratulations!</h1>
+<?php if (@$middle_watched_news) : ?>
+    <!-- *** LAST NEWS CAROUSEL *** -->
+    <section class="last__news-carousel">
+        <div class="container">
+            <div class="last_news_carousel owl-carousel owl-theme">
+                <?php $i = 0;
+                foreach ($middle_watched_news as $news) : ?>
+                    <?php if ($i == 7) break; ?>
+                    <div class="item">
+                        <a class="title">
+                            <?= substr(empty($news->title) ? '' :  $news->title, 0, 80) ?>...
+                        </a>
+                        <p> <?= $news->org_created_at ?></p>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+                        <img src="<?= @$news->image ?>" alt="">
+                    </div>
+                <?php $i++;
+                endforeach; ?>
             </div>
         </div>
+    </section>
+    <!-- *** LAST NEWS CAROUSEL END *** -->
+<?php endif; ?>
 
-    </div>
-</div>
+<?php if (@$most_watched_news) : ?>
+    <!-- *** MAIN NEWS CAROUSEL     *** -->
+    <section class="main__news-carousel">
+        <div class="container">
+            <div class="main__news-carousel-inner">
+                <div class="addvert">
+                    <img src="img/bakcell_logo 1.png" alt="">
+                </div>
+                <div class="main_news_carousel owl-carousel owl-theme">
+                    <?php $i = 0;
+                    foreach ($most_watched_news as $news) : ?>
+                        <?php if ($i == 7) break; ?>
+                        <div class="item">
+                            <img src="<?= @$news->image ?>" alt="">
+                            <a href="#" class="title"> <?= @$news->title ?></a>
+                        </div>
+                    <?php $i++;
+                    endforeach; ?>
+                </div>
+                <div class="addvert">
+                    <img src="img/bakcell_logo 1.png" alt="">
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- *** MAIN NEWS CAROUSEL END *** -->
+<?php endif; ?>
+
+<?php if (@$last_news) : ?>
+
+    <!-- *** LAST NEWS     *** -->
+    <section class="last__news">
+        <div class="container">
+            <div class="last__news-inner">
+                <?php foreach ($last_news as $news) : ?>
+                    <a href="#" class="item">
+                        <h4 class="title">
+                            <?= $news->title ?>
+                        </h4>
+                        <p> <?= $news->org_created_at ?></p>
+                        <p> <?= substr(empty($news->text) ? '' :  $news->text, 0, 350) ?>...
+                        </p>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+            <div class="last__news-link">
+                <a href="#" class="">Son Xəbərlər</a>
+            </div>
+        </div>
+    </section>
+    <!-- *** LAST NEWS END *** -->
+<?php endif; ?>

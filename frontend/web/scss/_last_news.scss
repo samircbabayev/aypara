@@ -6,6 +6,10 @@
 		.item {
 			max-width: 290px;
 			border-right: 1px solid #1f1f1f;
+			@media(max-width: 420px){
+				border: none;
+				border-bottom: 1px solid #1f1f1f;
+			}
 			padding-right: 30px;
 			@media(max-width:1024px){
 				max-width: 100%;
