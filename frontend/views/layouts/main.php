@@ -9,8 +9,13 @@ use yii\bootstrap4\Breadcrumbs;
 use yii\bootstrap4\Html;
 use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
+use yii\helpers\Url;
 
 AppAsset::register($this);
+
+$siteIndex = Yii::$app->controller->id == 'site' ? (Yii::$app->controller->action->id == 'index' ? true : false) : false;
+$lastNews = Yii::$app->controller->id == 'categories' ? (Yii::$app->controller->action->id == 'last-news' ? true : false) : false;
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -38,8 +43,8 @@ AppAsset::register($this);
             <span></span>
           </div>
           <div class="header__categories">
-            <a class="news__category_link active" href="#">Əsas Xəbərlər</a>
-            <a class="news__category_link" href="#">Son Xəbərlər</a>
+            <a class="news__category_link <?= $siteIndex ? 'active' : '' ?>" href="/">Əsas Xəbərlər</a>
+            <a class="news__category_link <?= $lastNews ? 'active' : '' ?>" href="<?= Url::to(['categories/last-news']) ?>">Son Xəbərlər</a>
             <a class="news__category_link" href="#">Siyasət</a>
             <a class="news__category_link" href="#">İqtisadiyyat</a>
             <a class="news__category_link" href="#">Cəmiyyət</a>
@@ -58,14 +63,14 @@ AppAsset::register($this);
             </a>
           </form>
           <div class="header__top-logo">
-            <img src="img/logo_white.svg" alt="Aypara Post">
+            <img src="/img/logo_white.svg" alt="Aypara Post">
           </div>
           <div class="header__menu"></div>
         </div>
       </div>
     </div>
     <div class="header__middle">
-      <a href="#"> <img src="img/logo.svg" alt="Aypara Post Logo"></a>
+      <a href="#"> <img src="/img/logo.svg" alt="Aypara Post Logo"></a>
     </div>
     <div class="header__bottom">
       <div class="container">
@@ -79,7 +84,7 @@ AppAsset::register($this);
     <div class="header__banner">
       <div class="container">
         <div class="header__banner-inner">
-          <img src="img/cocacola_banner.png" alt="Banner">
+          <img src="/img/cocacola_banner.png" alt="Banner">
         </div>
       </div>
     </div>

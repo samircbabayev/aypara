@@ -689,6 +689,79 @@ body.lock {
   color: #1f1f1f;
 }
 
+.pagination-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.pagination-holder .pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  border-radius: 3px;
+}
+
+.pagination-holder .pagination li {
+  background-color: antiquewhite;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.pagination-holder .pagination li.active {
+  background-color: #f6c483;
+}
+
+.pagination-holder .pagination li.active a {
+  color: #f0f0f0;
+}
+
+.pagination-holder .pagination li::hover {
+  background-color: #f1af59;
+}
+
+.pagination-holder .pagination li .page-link {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding: 4px 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.pagination-holder .pagination li span {
+  padding: 4px 8px;
+}
+
+.pagination-holder .pagination li.prev {
+  border-radius: 10px 0 0 10px;
+}
+
+.pagination-holder .pagination li.next {
+  border-radius: 0px 10px 10px 0px;
+}
+
 .category__main-inner {
   margin-top: 60px;
 }
@@ -718,10 +791,22 @@ body.lock {
 .category__main-inner .news .news__single {
   max-width: 19%;
   margin-bottom: 25px;
+  border-bottom: 1px solid #000;
+}
+
+@media (max-width: 1024px) {
+  .category__main-inner .news .news__single {
+    max-width: 70%;
+    margin: 0 auto;
+  }
 }
 
 .category__main-inner .news .news__single .title {
   color: #000000;
+}
+
+.category__main-inner .news .news__single img {
+  margin-top: 20px;
 }
 
 .category__main-inner .news .news__single p {

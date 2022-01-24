@@ -13,9 +13,17 @@
 		}
 		.news__single {
 			max-width: 19%;
+			@media (max-width: 1024px) {
+				max-width: 70%;
+				margin: 0 auto;
+			}
 			margin-bottom: 25px;
+			border-bottom: 1px solid #000;
 			.title {
 				color: #000000;
+			}
+			img {
+				margin-top: 20px;
 			}
 			p {
 				font-size: 1.6rem;
