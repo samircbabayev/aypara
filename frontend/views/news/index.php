@@ -8,6 +8,8 @@ use yii\helpers\Url;
     <div class="single__new-inner">
       <div class="single__new-text">
         <h1 class="title"><?= @$news->title ?></h1>
+        <hr>
+        <p><?= @$news->org_created_at ?></p>
         <p>
           <?= @$news->text ?>
         </p>
@@ -38,7 +40,7 @@ use yii\helpers\Url;
         <?php endforeach; ?>
       </div>
       <div class="last__news-link">
-        <a href="#" class="">Son Xəbərlər</a>
+        <a href="<?= Url::to(['/categories/last-news']) ?>" class="">Son Xəbərlər</a>
       </div>
     </div>
   </section>

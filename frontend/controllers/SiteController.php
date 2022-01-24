@@ -76,11 +76,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $last_news = News::find()->limit(5)->all();
+        $last_news = News::find()->limit(5)->orderBy(['id' => SORT_DESC])->all();
 
-        $most_watched_news = News::find()->where(['>', 'org_watch_count', 1000])->limit(30)->all();
+        $most_watched_news = News::find()->where(['>', 'org_watch_count', 1000])->orderBy(['id' => SORT_DESC])->limit(30)->all();
 
-        $middle_watched_news = News::find()->where(['>', 'org_watch_count', 400])->andWhere(['<', 'org_watch_count', 1000])->limit(30)->all();
+        $middle_watched_news = News::find()->where(['>', 'org_watch_count', 400])->andWhere(['<', 'org_watch_count', 1000])->orderBy(['id' => SORT_DESC])->limit(30)->all();
 
         return $this->render('index', [
             'last_news' => $last_news,

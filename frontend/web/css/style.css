@@ -250,7 +250,7 @@ img {
 .header__menu {
   z-index: 10;
   position: fixed;
-  top: 80px;
+  top: 75px;
   left: 0;
   right: 0;
   width: 100%;
@@ -846,6 +846,7 @@ body.lock {
 @media (max-width: 1024px) {
   .single__new-inner .single__new-text {
     margin: 0 auto;
+    width: 90%;
   }
 }
 
@@ -856,6 +857,7 @@ body.lock {
 @media (max-width: 1024px) {
   .single__new-inner .single__new-img {
     margin: 0 auto;
+    width: 90%;
   }
 }
 /*# sourceMappingURL=style.css.map */

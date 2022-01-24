@@ -76,7 +76,7 @@ $this->title = 'Əsas';
                 <?php endforeach; ?>
             </div>
             <div class="last__news-link">
-                <a href="#" class="">Son Xəbərlər</a>
+                <a href="<?= Url::to(['/categories/last-news']) ?>" class="">Son Xəbərlər</a>
             </div>
         </div>
     </section>
