@@ -3,6 +3,7 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+use backend\models\Category;
 use common\widgets\Alert;
 use frontend\assets\AppAsset;
 use yii\bootstrap4\Breadcrumbs;
@@ -15,7 +16,11 @@ AppAsset::register($this);
 
 $siteIndex = Yii::$app->controller->id == 'site' ? (Yii::$app->controller->action->id == 'index' ? true : false) : false;
 $lastNews = Yii::$app->controller->id == 'categories' ? (Yii::$app->controller->action->id == 'last-news' ? true : false) : false;
+$categories = Category::find()->all();
 
+$currentUrl = Url::current(['lg' => null], true);
+$lastDigitCurrUrl = substr($currentUrl, -1);
+$activeCategory = Yii::$app->controller->id == 'categories' ? (Yii::$app->controller->action->id == 'index' ? (true) : false) : false;
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -45,14 +50,9 @@ $lastNews = Yii::$app->controller->id == 'categories' ? (Yii::$app->controller->
           <div class="header__categories">
             <a class="news__category_link <?= $siteIndex ? 'active' : '' ?>" href="/">Əsas Xəbərlər</a>
             <a class="news__category_link <?= $lastNews ? 'active' : '' ?>" href="<?= Url::to(['categories/last-news']) ?>">Son Xəbərlər</a>
-            <a class="news__category_link" href="#">Siyasət</a>
-            <a class="news__category_link" href="#">İqtisadiyyat</a>
-            <a class="news__category_link" href="#">Cəmiyyət</a>
-            <a class="news__category_link" href="#">İdman</a>
-            <a class="news__category_link" href="#">Mədəniyyət</a>
-            <a class="news__category_link" href="#">Şou-Biznes</a>
-            <a class="news__category_link" href="#">Kriminal</a>
-            <a class="news__category_link" href="#">Dünya</a>
+            <?php foreach ($categories as $categ) : ?>
+              <a class="news__category_link <?= $activeCategory ? ($lastDigitCurrUrl == $categ->id ? 'active' : false) : false ?> " href="<?= Url::to(['categories/index', 'id' => $categ->id]) ?>"><?= $categ->note ?></a>
+            <?php endforeach ?>
           </div>
           <form class="header__search">
             <input type="text" class="header__search-input" placeholder="Axtar..." />
