@@ -1,4 +1,7 @@
 <?php
+
+use yii\helpers\Url;
+
 $this->title = 'Əsas';
 ?>
 
@@ -11,7 +14,7 @@ $this->title = 'Əsas';
                 foreach ($middle_watched_news as $news) : ?>
                     <?php if ($i == 7) break; ?>
                     <div class="item">
-                        <a class="title">
+                        <a href="<?= Url::to(['/news/index', 'id' => $news->id]) ?>" class="title">
                             <?= substr(empty($news->title) ? '' :  $news->title, 0, 80) ?>...
                         </a>
                         <p> <?= $news->org_created_at ?></p>
@@ -40,7 +43,7 @@ $this->title = 'Əsas';
                         <?php if ($i == 7) break; ?>
                         <div class="item">
                             <img src="<?= @$news->image ?>" alt="">
-                            <a href="#" class="title"> <?= @$news->title ?></a>
+                            <a href="<?= Url::to(['/news/index', 'id' => $news->id]) ?>" class="title"> <?= @$news->title ?></a>
                         </div>
                     <?php $i++;
                     endforeach; ?>
@@ -62,7 +65,7 @@ $this->title = 'Əsas';
         <div class="container">
             <div class="last__news-inner">
                 <?php foreach ($last_news as $news) : ?>
-                    <a href="#" class="item">
+                    <a href="<?= Url::to(['/news/index', 'id' => $news->id]) ?>" class="item">
                         <h4 class="title">
                             <?= $news->title ?>
                         </h4>

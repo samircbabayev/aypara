@@ -19,7 +19,12 @@ $lastNews = Yii::$app->controller->id == 'categories' ? (Yii::$app->controller->
 $categories = Category::find()->all();
 
 $currentUrl = Url::current(['lg' => null], true);
-$lastDigitCurrUrl = substr($currentUrl, -1);
+
+$lastnum = 0;
+if (preg_match_all('/\d+/', $currentUrl, $numbers))
+  $lastnum = end($numbers[0]);
+
+$lastDigitCurrUrl = $lastnum;
 $activeCategory = Yii::$app->controller->id == 'categories' ? (Yii::$app->controller->action->id == 'index' ? (true) : false) : false;
 ?>
 <?php $this->beginPage() ?>
@@ -62,15 +67,15 @@ $activeCategory = Yii::$app->controller->id == 'categories' ? (Yii::$app->contro
               </svg>
             </a>
           </form>
-          <div class="header__top-logo">
+          <a href="/" class="header__top-logo">
             <img src="/img/logo_white.svg" alt="Aypara Post">
-          </div>
+          </a>
           <div class="header__menu"></div>
         </div>
       </div>
     </div>
     <div class="header__middle">
-      <a href="#"> <img src="/img/logo.svg" alt="Aypara Post Logo"></a>
+      <a href="/"> <img src="/img/logo.svg" alt="Aypara Post Logo"></a>
     </div>
     <div class="header__bottom">
       <div class="container">
@@ -105,7 +110,7 @@ $activeCategory = Yii::$app->controller->id == 'categories' ? (Yii::$app->contro
     <!-- *** FOOTER WORD BANNER END *** -->
 
     <div class="footer__info">
-      <div class="logo"><a href="#"><img src="/img/logo.svg" alt=""></a></div>
+      <div class="logo"><a href="/"><img src="/img/logo.svg" alt=""></a></div>
       <div class="info">
         &copy;
         <script>
