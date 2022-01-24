@@ -70,7 +70,24 @@ $activeCategory = Yii::$app->controller->id == 'categories' ? (Yii::$app->contro
           <a href="/" class="header__top-logo">
             <img src="/img/logo_white.svg" alt="Aypara Post">
           </a>
-          <div class="header__menu"></div>
+          <div class="header__menu">
+            <div class="header__menu-inner">
+              <p>ayparapost@gmail.com</p>
+              <ul class="categories">
+                <li>
+                  <a class="news__category_link <?= $siteIndex ? 'active' : '' ?>" href="/">Əsas Xəbərlər</a>
+                </li>
+                <li>
+                  <a class="news__category_link <?= $lastNews ? 'active' : '' ?>" href="<?= Url::to(['categories/last-news']) ?>">Son Xəbərlər</a>
+                </li>
+                <?php foreach ($categories as $categ) : ?>
+                  <li>
+                    <a class="news__category_link <?= $activeCategory ? ($lastDigitCurrUrl == $categ->id ? 'active' : false) : false ?> " href="<?= Url::to(['categories/index', 'id' => $categ->id]) ?>"><?= $categ->note ?></a>
+                  </li>
+                <?php endforeach ?>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
