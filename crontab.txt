@@ -1,1 +1,1 @@
-*/10 * * * * php ~/Samir/experimentalprojects/ayparacom/yii pull/pull-news-from-website
+*/15 * * * * php ~/Samir/experimentalprojects/ayparacom/yii pull/pull-news-from-website
