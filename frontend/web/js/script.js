@@ -18,12 +18,12 @@ $(document).ready(function () {
     center: true,
     loop: true,
     dots: false,
-    rewindNav: false,
+    // rewindNav: false,
     autoplay: true,
     autoplayHoverPause: true,
     autoplayTimeout: 2000,
-    animateOut: 'slideOutUp',
-    animateIn: 'slideInUp',
+    animateOut: 'fadeOut',
+    // animateIn: 'fadein',
     items: 1,
     responsive: {
       // breakpoint from 0 up
