@@ -1,2 +1,2 @@
-0 0-21/2 * * * php ~/Samir/experimentalprojects/ayparacom/yii pull/pull-news-from-website
-15 0-21/2 * * * php ~/Samir/experimentalprojects/ayparacom/yii pull/pull-news-from-website
+0 */2 * * * php ~/Samir/experimentalprojects/ayparacom/yii pull/pull-news-from-website
+15 */2 * * * php ~/Samir/experimentalprojects/ayparacom/yii pull/pull-news-from-website
