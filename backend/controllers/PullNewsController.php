@@ -59,7 +59,9 @@ class PullNewsController extends Controller
 
   private function pullNewsToDb($news_links, $domain)
   {
-    foreach ($news_links as $link) {
+    $new_news_links = array_reverse($news_links);
+
+    foreach ($new_news_links as $link) {
       $news_client = new HtmlWeb();
       $news_html = $news_client->load($domain . $link);
 
