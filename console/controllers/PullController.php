@@ -72,7 +72,7 @@ class PullController extends Controller
 
       foreach ($news_html->find('.news-inner p') as $element) {
         if (strlen($element->innertext) > 5)
-          $text_str .= " " . $element->innertext;
+          $text_str .= " <p>" . $element->innertext . " </p>";
       }
 
       $org_category_name = explode("/", $link)[1];
