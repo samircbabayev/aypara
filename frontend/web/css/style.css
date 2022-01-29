@@ -473,6 +473,7 @@ body.lock {
 }
 
 .last_news_carousel .item {
+  margin: 0 auto;
   display: -ms-grid;
   display: grid;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
