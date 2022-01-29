@@ -537,6 +537,16 @@ body.lock {
   border-left: none;
 }
 
+.last_news_carousel .item .link__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+  color: transparent;
+}
+
 .last_news_carousel .item h2 {
   font-family: "Pragati Narrow", sans-serif;
   font-size: 2rem;
