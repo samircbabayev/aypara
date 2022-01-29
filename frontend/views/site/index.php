@@ -13,7 +13,8 @@ $this->title = 'Əsas';
                 <?php $i = 0;
                 foreach ($middle_watched_news as $news) : ?>
                     <?php if ($i == 7) break; ?>
-                    <div class="item" style="background-image: url(<?= @$news->image ?>)">
+                    <div class="item">
+                        <img src="<?= @$news->image ?>" alt="">
                         <a href="<?= Url::to(['/news/index', 'id' => $news->id]) ?>" class="link__inner"></a>
                         <h2><?= @$news->title ?></h2>
                     </div>
