@@ -13,14 +13,9 @@ $this->title = 'Əsas';
                 <?php $i = 0;
                 foreach ($middle_watched_news as $news) : ?>
                     <?php if ($i == 7) break; ?>
-                    <div class="item">
-                        <a href="<?= Url::to(['/news/index', 'id' => $news->id]) ?>" class="title">
-                            <?= substr(empty($news->title) ? '' :  $news->title, 0, 80) ?>...
-                        </a>
-                        <p> <?= $news->org_created_at ?></p>
-
-                        <img src="<?= @$news->image ?>" alt="">
-                    </div>
+                    <a href="<?= Url::to(['/news/index', 'id' => $news->id]) ?>" class="item" style="background-image: url(<?= @$news->image ?>)">
+                        <h2><?= @$news->title ?></h2>
+                    </a>
                 <?php $i++;
                 endforeach; ?>
             </div>
@@ -43,7 +38,7 @@ $this->title = 'Əsas';
                         <?php if ($i == 7) break; ?>
                         <div class="item">
                             <img src="<?= @$news->image ?>" alt="">
-                            <a href="<?= Url::to(['/news/index', 'id' => $news->id]) ?>" class="title"> <?= @$news->title ?></a>
+                            <a href="<?= Url::to(['/news/index', 'id' => $news->id]) ?><?= Url::to(['/news/index', 'id' => $news->id]) ?>" class="title"> <?= @$news->title ?></a>
                         </div>
                     <?php $i++;
                     endforeach; ?>
