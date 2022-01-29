@@ -18,7 +18,7 @@ class CategoriesController extends Controller
 
     $pagination = new Pagination([
       'defaultPageSize' => 15,
-      'totalCount' => $news->count(),
+      'totalCount' => 150,
     ]);
 
     $news = $news
@@ -41,7 +41,8 @@ class CategoriesController extends Controller
 
     $pagination = new Pagination([
       'defaultPageSize' => 15,
-      'totalCount' => $news->count(),
+      'totalCount' => 150,
+
     ]);
 
     $news = $news
