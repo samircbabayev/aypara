@@ -29,9 +29,9 @@ $this->title = 'Əsas';
     <section class="main__news-carousel">
         <div class="container">
             <div class="main__news-carousel-inner">
-                <div class="addvert">
-                    <img src="img/bakcell_logo 1.png" alt="">
-                </div>
+                <a href="https://www.vektoruniforma.com" target="_blank" class="addvert">
+                    <img src="img/vektorsafetybanner.jpg" alt="Vektor Safety">
+                </a>
                 <div class="main_news_carousel owl-carousel owl-theme">
                     <?php $i = 0;
                     foreach ($most_watched_news as $news) : ?>
@@ -43,9 +43,9 @@ $this->title = 'Əsas';
                     <?php $i++;
                     endforeach; ?>
                 </div>
-                <div class="addvert">
-                    <img src="img/bakcell_logo 1.png" alt="">
-                </div>
+                <a href="https://www.bakcell.com/az" target="_blank" class="addvert">
+                    <img src="img/bakcell_addvert.jpg" alt="Bakcell">
+                </a>
             </div>
 
         </div>
