@@ -493,23 +493,6 @@ body.lock {
   padding: 2rem;
 }
 
-.last_news_carousel .item img {
-  position: absolute;
-  top: -9999px;
-  right: -9999px;
-  bottom: -9999px;
-  left: -9999px;
-  margin: auto;
-  /* The following values determine the exact image behaviour. */
-  /* You can simulate background-size: cover/contain/etc.
-				 by changing between min/max/standard width/height values.
-				 These values simulate background-size: cover
-			*/
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
-}
-
 @media (max-width: 320px) {
   .last_news_carousel .item {
     width: 250px;

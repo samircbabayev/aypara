@@ -11,22 +11,6 @@
 		grid-template-rows: auto max-content;
 		background-position: center;
 		background-size: cover;
-		img {
-			position: absolute;
-			top: -9999px;
-			right: -9999px;
-			bottom: -9999px;
-			left: -9999px;
-			margin: auto;
-			/* The following values determine the exact image behaviour. */
-			/* You can simulate background-size: cover/contain/etc.
-				 by changing between min/max/standard width/height values.
-				 These values simulate background-size: cover
-			*/
-			min-width: 100%;
-			min-height: 100%;
-			z-index: -1;
-		}
 		color: white;
 		position: relative;
 		width: 290px;
@@ -61,7 +45,7 @@
 			grid-row: 1 / span 2;
 			border-left: none;
 		}
-		.link__inner {
+		.link__inner{
 			position: absolute;
 			top: 0;
 			left: 0;
