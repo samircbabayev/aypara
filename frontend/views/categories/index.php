@@ -2,6 +2,8 @@
 
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
+
+$this->title = @$category->note;
 ?>
 <section class="category__main">
   <div class="container">

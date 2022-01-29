@@ -2,6 +2,8 @@
 
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
+
+$this->title = "Son Xəbərlər";
 ?>
 <section class="category__main">
   <div class="container">
