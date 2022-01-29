@@ -145,12 +145,6 @@ $activeCategory = Yii::$app->controller->id == 'categories' ? (Yii::$app->contro
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
   </footer>
 
-  <script>
-    if (navigator.userAgent.includes("Instagram")) {
-      window.location.href = "https://mywebsite.com/DummyBytes";
-    }
-  </script>
-
   <?php $this->endBody() ?>
 </body>
 
